@@ -1,0 +1,7 @@
+.content a {
+  @apply text-primary-600;
+
+  &:hover {
+    @apply text-primary-800 underline;
+  }
+}

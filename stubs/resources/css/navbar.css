@@ -1,0 +1,95 @@
+.logo {
+  @apply block py-4;
+}
+
+.navbar {
+  @apply max-w-4xl mx-auto w-full justify-between items-center;
+}
+
+.menu-toggle {
+  @apply pt-5 rounded outline-none opacity-75;
+  transform: scale(0.75);
+
+  & .hamburger-inner,
+  & .hamburger-inner::before,
+  & .hamburger-inner::after,
+  &.is-active .hamburger-inner,
+  &.is-active .hamburger-inner::before,
+  &.is-active .hamburger-inner::after {
+    @apply bg-gray-600;
+  }
+}
+
+.menu-toggle:hover {
+  /* @apply bg-gray-800; */
+
+  & .hamburger-inner,
+  & .hamburger-inner::before,
+  & .hamburger-inner::after {
+    @apply bg-gray-900;
+  }
+}
+
+.navbar-menu {
+  @apply bg-gray-700 border-t border-gray-400 shadow-lg opacity-75;
+  transition: transform 0.25s ease;
+  transform-origin: top center;
+}
+
+.navbar-menu.hide {
+  transition: none;
+}
+
+.navbar-menu li {
+  @apply block;
+}
+
+.navbar-menu a {
+  @apply block font-bold py-6 border-l-4 border-transparent text-left pl-6 text-gray-400;
+}
+
+.navbar-menu a:hover {
+  @apply text-gray-200 bg-gray-600 border-gray-500;
+}
+
+.navbar-menu li:hover {
+  @apply border-gray-300;
+}
+
+.navbar-menu li.active a {
+  @apply border-primary-400 text-primary-400;
+}
+
+@screen md {
+  .menu-toggle {
+    @apply hidden;
+  }
+
+  .navbar {
+    @apply flex;
+  }
+
+  .logo {
+    @apply py-0;
+  }
+
+  .navbar-menu.hide {
+    transition: transform 0.25s ease;
+  }
+  .navbar-menu {
+    @apply bg-transparent border-0 shadow-none opacity-100;
+  }
+  .navbar-menu li {
+    @apply inline-block;
+  }
+  .navbar-menu a {
+    @apply border-t-4 border-l-0 text-gray-600;
+  }
+  .navbar-menu a:hover {
+    @apply bg-transparent text-gray-900;
+  }
+
+  .navbar-menu li.active a {
+    @apply border-primary-700 text-primary-700;
+  }
+}

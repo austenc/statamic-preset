@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Merriweather+Sans&display=swap');
+@import 'hamburgers/dist/hamburgers';
+
+@import 'tailwindcss/base';
+
+/**
+ * Add any custom base styles you need here
+ */
+
+@import 'tailwindcss/components';
+
+/**
+ * Import your custom CSS files here
+ * 
+ * For example:
+ * @import "your-great-component";
+ */
+/* purgecss start ignore */
+@import 'content';
+@import 'navbar';
+/* purgecss end ignore */
+
+@import 'tailwindcss/utilities';
+
+/**
+ * Here we'll add in our own utilities that don't come with Tailwind CSS
+ */
+/* purgecss start ignore */
+
+/* Import your own utility files here */
+
+/* purgecss end ignore */

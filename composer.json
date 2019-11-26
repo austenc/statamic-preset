@@ -1,0 +1,23 @@
+{
+  "name": "austenc/statamic-preset",
+  "description": "Scaffold a Statamic website juust right.",
+  "authors": [
+    {
+      "name": "austenc",
+      "email": "austen.cameron@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "AustenCam\\Preset\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "AustenCam\\Preset\\PresetServiceProvider"
+      ]
+    }
+  }
+}
