@@ -17,6 +17,7 @@ class Preset extends BasePreset
         static::updateDotfiles();
         static::removeNodeModules();
         static::addTailwindConfig();
+        static::updateViews();
     }
 
     protected static function path($filename)
@@ -50,6 +51,13 @@ class Preset extends BasePreset
     protected static function updateWebpackConfig()
     {
         copy(self::path('webpack.mix.js'), base_path('webpack.mix.js'));
+    }
+
+    protected static function updateViews()
+    {
+        tap(new Filesystem, function ($files) {
+            $files->copyDirectory(self::path('resources/views'), resource_path('views'));
+        });
     }
 
     /**
