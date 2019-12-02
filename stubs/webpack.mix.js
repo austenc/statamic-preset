@@ -16,7 +16,7 @@ mix
     whitelist: ['a', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'ol', 'ul', 'li']
   })
   .browserSync({
-    proxy: process.env.MIX_APP_URL
+    proxy: process.env.APP_URL
   });
 
 if (mix.inProduction()) {
