@@ -1,0 +1,26 @@
+<div class="navbar">
+   <div class="md:flex justify-between items-center">
+      <div class="flex px-4 justify-between items-center">
+         <a href="/" class="logo">
+            {{ partial:logo }}
+         </a>
+         <button type="button" class="menu-toggle hamburger hamburger--spin focus:outline-none">
+            <span class="hamburger-box">
+               <span class="hamburger-inner"></span>
+            </span>
+         </button>
+      </div>
+      <ul class="navbar-menu hide md:block">
+         {{ structure:pages max_depth="2" }}
+            <li class="{{ if is_current || is_parent }} active{{ /if }}">
+               <a href="{{ url }}" class="p-4">{{ title }}</a>
+               {{ if is_current || is_parent }}
+                  {{ if children }}
+                     <ul>{{ *recursive children* }}</ul>
+                  {{ /if }}
+               {{ /if }}
+            </li>
+         {{ /structure:pages }}
+      </ul>
+   </div>
+</div>

@@ -22,7 +22,7 @@ class Preset extends BasePreset
 
     protected static function path($filename)
     {
-        return __DIR__ . '/../stubs/' . $filename;
+        return __DIR__ . '/../' . $filename;
     }
 
     /**
