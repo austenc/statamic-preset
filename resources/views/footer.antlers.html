@@ -4,11 +4,11 @@
             <div class="px-4">
                 <h3 class="pb-4 font-heading text-gray-300 text-xl">Navigate</h3>
                 <ul class="leading-loose">
-                    {{# {{ nav from="/" max_depth="2" }}
+                    {{ structure:pages max_depth="2" }}
                        <li>
                           <a href="{{ url }}" class="text-primary-300 hover:text-primary-500 text-shadow-dark">{{ title }}</a>
                        </li>
-                    {{ /nav }} #}}
+                    {{ /structure:pages }}
                 </ul>
             </div>
         </div>
