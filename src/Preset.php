@@ -18,6 +18,7 @@ class Preset extends BasePreset
         static::removeNodeModules();
         static::addTailwindConfig();
         static::updateViews();
+        static::addContent();
     }
 
     protected static function path($filename)
@@ -101,5 +102,12 @@ class Preset extends BasePreset
     protected static function addTailwindConfig()
     {
         copy(self::path('tailwind.config.js'), base_path('tailwind.config.js'));
+    }
+
+    protected static function addContent()
+    {
+        tap(new Filesystem, function ($files) {
+            $files->copyDirectory(self::path('content/collections/pages'), base_path('content/collections/pages'));
+        });
     }
 }
