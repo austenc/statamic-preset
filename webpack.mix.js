@@ -1,5 +1,5 @@
-const mix = require('laravel-mix');
-require('laravel-mix-purgecss');
+const mix = require('laravel-mix')
+require('laravel-mix-purgecss')
 
 mix
   .js('resources/js/app.js', 'public/js')
@@ -8,17 +8,23 @@ mix
     postCss: [
       require('postcss-import')(),
       require('tailwindcss')(),
-      require('postcss-nesting')()
+      require('postcss-nesting')(),
     ],
-    processCssUrls: false
+    processCssUrls: false,
   })
   .purgeCss({
-    whitelist: ['a', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'ol', 'ul', 'li']
+    whitelist: ['a', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'ol', 'ul', 'li'],
   })
   .browserSync({
-    proxy: process.env.APP_URL
-  });
+    proxy: process.env.APP_URL,
+    files: [
+      'app/**/*.php',
+      'resources/views/**/*.php',
+      'public/**/*.(js|css)',
+      'resources/views/**/*.antlers.html',
+    ],
+  })
 
 if (mix.inProduction()) {
-  mix.version();
+  mix.version()
 }
