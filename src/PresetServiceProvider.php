@@ -9,11 +9,15 @@ class PresetServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        PresetCommand::macro('statamic', self::statamic());
-        PresetCommand::macro('statamic-preset', self::statamic());
+        PresetCommand::macro('statamic', function ($command) {
+            self::statamic($command);
+        });
+        PresetCommand::macro('statamic-preset', function ($command) {
+            self::statamic($command);
+        });
     }
 
-    public function statamic()
+    public function statamic($command)
     {
         Preset::install();
         $command->info('Your preset has been installed successfully.');
